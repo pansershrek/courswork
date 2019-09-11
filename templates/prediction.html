@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">    <title>Add text</title>
+</head>
+<body>
+    <div id="menu"></div>
+    <dir id="hello"></dir>
+    <div id="predict_title"> </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <script type="text/babel">
+        const menu = {
+            home: "{% url 'index' %}",
+            add_text: "{% url 'add_text' %}",
+            get_all_titles: "{% url 'get_all_titles' %}",
+            get_prediction: "{% url 'get_prediction' %}"
+        }
+        ReactDOM.render(
+            <div>
+                <h1><a href={menu.home}>Home</a></h1>
+                <h1><a href={menu.add_text}>Add text to service</a></h1>
+                <h1><a href={menu.get_all_titles}>View available texts</a></h1>
+                <h1><a href={menu.get_prediction}>Get prediction</a></h1>
+            </div>,
+            document.getElementById("menu")
+        )
+        ReactDOM.render(
+            <h2>{{title}}</h2>,
+            document.getElementById("predict_title")
+        )
+        ReactDOM.render(
+            <p>
+                Heare you can get predicted book's title.
+            </p>,
+            document.getElementById("hello")
+        )
+    </script>
+</body>
+</html>

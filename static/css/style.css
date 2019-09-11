@@ -1,0 +1,26 @@
+h1 {
+        text-align: center;
+        font-size: 20pt;
+        color: #000099;
+        margin-bottom: 5px;
+        text-decoration: underline;
+        display:inline-block;
+        border : 1px solid #E76D13;
+    }
+table {
+        margin: 5px;
+        width: 290px;
+}
+th {
+        padding: 3px;
+}
+
+td {
+        padding-left: 8px;
+        padding-right: 8px;
+        border: 1px solid #990000;
+        background-color: #ffffcc;
+}
+body {
+  background-color: lightgreen;
+}
