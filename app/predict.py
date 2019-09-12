@@ -18,8 +18,7 @@ def make_prediction(titles_liked, titles_dislike):
         'predictor', 'PREDICTOR_URL',
         fallback=''
     )
-    return ["KEK", ]  # REMOVE !!!!!!!
     r = requests.get(
         url + f"?titles_liked={titles_liked}&titles_dislike={titles_dislike}"
     )
-    return r.json.get("title")
+    return r.json.get("title", [])
